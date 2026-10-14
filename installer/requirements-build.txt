@@ -1,0 +1,3 @@
+# El sistema usa SOLO la biblioteca estandar de Python 3.9+ (no requiere instalar paquetes).
+# Unicamente para generar el .exe se necesita (una sola vez, con internet, en el equipo del desarrollador):
+pyinstaller>=6.0
