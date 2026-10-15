@@ -81,6 +81,9 @@ No tienes que descargar ni instalar nada.
 
 3. Listo: verás el **Panel de control**. Si el sistema es nuevo, ya trae una empresa de ejemplo para que explores.
 
+<p align="center"><img src="docs/img/28-panel-movil.png" alt="Panel de control visto desde el celular" width="300"></p>
+<p align="center"><sub>El mismo sistema desde el navegador del celular.</sub></p>
+
 **Lo que debes saber de la versión web**
 
 - **La primera carga puede tardar unos segundos** (10 a 30): el servicio se "despierta" y, si es la primera vez, crea sus tablas. Si ves un error de «tiempo agotado», espera un minuto y recarga.
@@ -207,18 +210,21 @@ El sistema ya incluye una **empresa de ejemplo** («Delicious Food S.A.S.») con
 | 10 | **Órdenes de producción** (+ materia prima utilizada + horas de trabajo) | Lo que realmente pasó |
 | 11 | **Panel**, **Hoja de costos**, **Análisis de variaciones** | La lectura de resultados |
 
+> [!NOTE]
+> ¿Quieres saber para qué sirve **cada apartado** del menú antes de empezar? Al final de esta sección está el **mapa completo del menú**, con todos los apartados explicados.
+
 > [!TIP]
 > Cada módulo tiene los botones **Nuevo**, **Editar** y **Eliminar**, y un buscador. El sistema **valida** todo lo que escribes (campos obligatorios, números válidos, fechas coherentes, códigos no repetidos) y te explica en español qué corregir.
 
 ### Paso 1 · Crea tu empresa
 **Menú Datos generales → Empresas → Nueva.** NIT, razón social, nombre comercial, régimen tributario (*Responsable de IVA*, *No responsable de IVA* o *Régimen simple*), tarifa de IVA, retención, actividad económica (CIIU), dirección, ciudad, teléfono y correo. Arriba, en el selector **Empresa**, eliges con cuál trabajas (puedes tener varias).
 
-<p align="center"><img src="docs/img/03-empresas.png" alt="Módulo Empresas" width="800"></p>
+<p align="center"><img src="docs/img/04-empresas.png" alt="Módulo Empresas" width="800"></p>
 
 ### Paso 2 · Crea un período contable
 **Períodos contables → Nuevo.** Código (por ejemplo `2026-10`), fechas de inicio y fin, y **estado** (*Abierto* o *Cerrado*).
 
-<p align="center"><img src="docs/img/04-periodos.png" alt="Módulo Períodos contables" width="800"></p>
+<p align="center"><img src="docs/img/05-periodos.png" alt="Módulo Períodos contables" width="800"></p>
 
 Dos datos clave para repartir los costos indirectos:
 
@@ -232,10 +238,12 @@ Dos datos clave para repartir los costos indirectos:
 - **Unidades de medida:** ya incluye pieza, porción, kilo, libra, gramo, litro, mililitro, onza, galón, metro cúbico, rollo y hora. Agrega las que falten.
 - **Centros de costo:** áreas del negocio, de tipo *Productivo*, *Servicio* o *Administrativo* (por ejemplo «Cocina – Producción»).
 
+<p align="center"><img src="docs/img/07-unidades.png" alt="Módulo Unidades de medida" width="390"> <img src="docs/img/08-centros-costo.png" alt="Módulo Centros de costo" width="390"></p>
+
 ### Paso 4 · Registra tus materias primas
 **Materias primas directas → Materias primas → Nueva.**
 
-<p align="center"><img src="docs/img/05-materias-primas.png" alt="Módulo Materias primas" width="800"></p>
+<p align="center"><img src="docs/img/09-materias-primas.png" alt="Módulo Materias primas" width="800"></p>
 
 | Campo | Qué poner |
 |---|---|
@@ -253,10 +261,14 @@ costo estándar = costo de compra ÷ contenido × (1 + merma%) × (1 + logístic
 
 *Ejemplo: un paquete de 10 arepas a $4.800 → $480 por arepa.*
 
+Así se ve el formulario al pulsar **Nueva**:
+
+<p align="center"><img src="docs/img/27-form-materia-prima.png" alt="Formulario para crear una materia prima" width="700"></p>
+
 ### Paso 5 · Registra la mano de obra
 **Mano de obra directa → Trabajadores y cargos → Nuevo.** Salario mensual, **prestaciones sociales %**, **cargas laborales %** y **horas estándar por mes**.
 
-<p align="center"><img src="docs/img/06-trabajadores.png" alt="Módulo Trabajadores y cargos" width="800"></p>
+<p align="center"><img src="docs/img/11-trabajadores.png" alt="Módulo Trabajadores y cargos" width="800"></p>
 
 ```text
 tarifa por hora = salario × (1 + prestaciones% + cargas%) ÷ horas del mes
@@ -266,7 +278,9 @@ tarifa por hora = salario × (1 + prestaciones% + cargas%) ÷ horas del mes
 > Registra **solo a quienes producen**. Las horas por mes son las de **un mes** (unas 192–240), no las de la semana.
 
 ### Paso 6 · Crea tus productos
-**Datos generales → Productos → Nuevo.** Código, nombre, unidad de medida, **precio de venta** y centro de costo.
+**Datos generales → Productos → Nuevo.** Código, nombre, unidad de medida, **precio de venta** y centro de costo. El precio de venta se usa después para calcular las ventas y el margen del Panel.
+
+<p align="center"><img src="docs/img/06-productos.png" alt="Módulo Productos" width="800"></p>
 
 ### Paso 7 · Arma la receta estándar
 **Materias primas directas → Receta estándar → Nueva.** Para cada producto agrega cada materia prima con:
@@ -274,10 +288,12 @@ tarifa por hora = salario × (1 + prestaciones% + cargas%) ÷ horas del mes
 - **Cantidad estándar por unidad:** cuánto lleva *una* unidad del producto.
 - **Eficiencia %:** `100` = sin desperdicio. Con `95`, el 5 % se pierde y el sistema lo suma al costo.
 
-<p align="center"><img src="docs/img/08-receta.png" alt="Módulo Receta estándar" width="800"></p>
+<p align="center"><img src="docs/img/10-receta.png" alt="Módulo Receta estándar" width="800"></p>
 
 ### Paso 8 · Define la hora estándar de mano de obra
 **Mano de obra directa → Hora estándar de MOD por producto → Nueva.** Producto, trabajador/cargo y **horas estándar por unidad**.
+
+<p align="center"><img src="docs/img/12-hora-estandar-mod.png" alt="Módulo Hora estándar de MOD por producto" width="800"></p>
 
 > [!WARNING]
 > Esas horas son el tiempo de **UNA sola unidad**, no el de toda la tanda. Si 30 piezas se hacen en 15 minutos: 15 ÷ 30 ÷ 60 = **0,0083 horas** por pieza. Poner el tiempo de la tanda infla la mano de obra y todo parece pérdida.
@@ -285,7 +301,7 @@ tarifa por hora = salario × (1 + prestaciones% + cargas%) ÷ horas del mes
 ### Paso 9 · Registra los costos indirectos (CIF)
 **Costos indirectos → Registro de CIF → Nuevo.** Período, código, descripción (arriendo, gas, energía, empaques…), **tipo** (*Fijo* o *Variable*), centro de costo, **CIF presupuestado** y **CIF real**.
 
-<p align="center"><img src="docs/img/07-cif.png" alt="Módulo Registro de CIF" width="800"></p>
+<p align="center"><img src="docs/img/13-cif.png" alt="Módulo Registro de CIF" width="800"></p>
 
 El sistema calcula la **tasa predeterminada** del período:
 
@@ -300,12 +316,114 @@ Una orden se registra en **tres pantallas**, todas en el menú **Producción**:
 2. **Materia prima utilizada:** por orden y materia prima, la **cantidad real** usada y el **precio real** pagado.
 3. **Horas de trabajo (MOD real):** por orden y trabajador, las **horas reales** y la **tarifa real**.
 
-<p align="center"><img src="docs/img/09-ordenes.png" alt="Módulo Órdenes de producción" width="800"></p>
+<p align="center"><img src="docs/img/14-ordenes.png" alt="Módulo Órdenes de producción" width="800"></p>
+
+**Materia prima utilizada** (lo que realmente se gastó en cada orden):
+
+<p align="center"><img src="docs/img/15-mp-utilizada.png" alt="Módulo Materia prima utilizada" width="800"></p>
+
+**Horas de trabajo (MOD real)** (las horas que realmente se trabajaron en cada orden):
+
+<p align="center"><img src="docs/img/16-horas-trabajo.png" alt="Módulo Horas de trabajo (MOD real)" width="800"></p>
 
 > [!WARNING]
 > Las variaciones solo son representativas cuando la orden tiene registrados **todos** sus consumos reales (materiales **y** horas). Una orden con datos parciales mostrará variaciones favorables artificiales.
 
 Cada vez que guardas un cambio, el sistema **recalcula todo automáticamente**: costos estándar, costos reales y variaciones.
+
+---
+
+### 🗺️ Mapa completo del menú: qué hay en cada apartado
+
+Esta es la referencia rápida de **todos los apartados** del menú lateral, en el mismo orden en que aparecen. La idea general es sencilla: lo que cargas en los apartados *estándar* (materias primas, recetas, mano de obra y CIF) define **cuánto debería costar**; lo que cargas en *Producción* dice **cuánto costó de verdad**; y los apartados de *resultados* comparan ambos.
+
+```mermaid
+flowchart LR
+  A["Datos generales<br/>Empresa, período, productos"] --> E
+  B["Materias primas<br/>+ Receta estándar"] --> E
+  C["Trabajadores<br/>+ Hora estándar de MOD"] --> E
+  D["Registro de CIF"] --> E
+  E["Costo ESTÁNDAR<br/>cuánto debería costar"] --> H
+  F["Órdenes de producción<br/>+ Materia prima utilizada<br/>+ Horas de trabajo"] --> G["Costo REAL<br/>cuánto costó de verdad"]
+  G --> H["Variaciones<br/>por qué costó distinto"]
+  H --> I["Panel, Hoja de costos,<br/>Análisis y Reportes"]
+```
+
+#### 🏠 Inicio
+
+| Apartado | Para qué sirve | Qué verás o registrarás |
+|---|---|---|
+| **Panel de control** | Pantalla de inicio: un vistazo al estado de tus costos. | Indicadores (costo estándar vs. real, variaciones, ventas y margen) y tres gráficos. Se filtra por período y producto. Detalle en la [sección 8](#8--cómo-leer-los-resultados). |
+
+#### 🗂️ Datos generales
+*Catálogos base. Se crean primero porque el resto de los apartados se apoya en ellos.*
+
+| Apartado | Para qué sirve | Qué verás o registrarás |
+|---|---|---|
+| **Empresas** | El negocio para el que se calculan los costos. | NIT, razón social, nombre comercial, régimen tributario, IVA, retención, CIIU, dirección y contacto. El selector **Empresa** (arriba) define con cuál trabajas. |
+| **Períodos contables** | El lapso (normalmente un mes) que se va a costear. | Código, fechas de inicio y fin, estado (*Abierto* o *Cerrado*), **base de aplicación del CIF** y **base presupuestada**. Un período cerrado bloquea órdenes y CIF nuevos. |
+| **Productos** | Lo que vendes. | Código, nombre, unidad de medida, **precio de venta** y centro de costo. El precio alimenta las ventas y el margen del Panel. |
+| **Unidades de medida** | Catálogo de unidades (pieza, porción, kilo, gramo, litro, hora…). | Ya vienen las básicas; agrega las que falten. Se usan al definir materias primas y productos. |
+| **Centros de costo** | Las áreas del negocio donde se generan los costos. | Nombre y tipo (*Productivo*, *Servicio* o *Administrativo*), por ejemplo «Cocina – Producción». Se asignan a productos y a registros de CIF. |
+
+#### 🥩 Materias primas directas
+*Los materiales que se convierten en producto y cuánto lleva cada unidad.*
+
+| Apartado | Para qué sirve | Qué verás o registrarás |
+|---|---|---|
+| **Materias primas** | La lista de insumos con su costo. | Presentación de compra, unidad estándar, costo de compra, contenido, % de merma y % de costo logístico. El sistema calcula el **costo estándar por unidad**. |
+| **Receta estándar (cantidades y eficiencia)** | Cuánto de cada materia prima lleva **una** unidad de producto. | Por producto y materia prima: cantidad estándar por unidad y **eficiencia %** (100 = sin desperdicio). Define el costo estándar de los materiales. |
+
+#### 👷 Mano de obra directa
+*Quién produce y cuánto tiempo toma cada producto.*
+
+| Apartado | Para qué sirve | Qué verás o registrarás |
+|---|---|---|
+| **Trabajadores y cargos** | Las personas que producen y cuánto cuesta su hora. | Salario mensual, prestaciones %, cargas laborales % y horas estándar por mes. De ahí sale la **tarifa por hora**. |
+| **Hora estándar de MOD por producto** | El tiempo que toma **una** unidad de cada producto. | Producto, trabajador o cargo y horas por unidad. Multiplicadas por la tarifa dan el costo estándar de mano de obra. |
+
+#### 🏭 Costos indirectos
+
+| Apartado | Para qué sirve | Qué verás o registrarás |
+|---|---|---|
+| **Registro de CIF** | Los costos indirectos de fabricación: arriendo, gas, energía, empaques… | Período, código, descripción, tipo (*Fijo* o *Variable*), centro de costo, CIF **presupuestado** y CIF **real**. De aquí sale la tasa de aplicación del período. |
+
+#### 📦 Producción
+*Lo que realmente pasó. Se captura en orden: primero la orden y después sus dos detalles.*
+
+| Apartado | Para qué sirve | Qué verás o registrarás |
+|---|---|---|
+| **Órdenes de producción** | Cada tanda producida (la «cabecera» de la orden). | Número, período, producto, fecha, cantidad planeada, terminada y en proceso, % de avance y estado (*Abierta* o *Cerrada*). |
+| **Materia prima utilizada** | Los materiales que de verdad se gastaron en cada orden. | Por orden y materia prima: **cantidad real** y **precio real**. Alimenta las variaciones de precio y de cantidad. |
+| **Horas de trabajo (MOD real)** | Las horas que de verdad se trabajaron en cada orden. | Por orden y trabajador: **horas reales** y **tarifa real**. Alimenta las variaciones de tarifa y de eficiencia. |
+
+#### 📈 Costos y variaciones
+*Aquí el sistema compara lo estándar con lo real.*
+
+| Apartado | Para qué sirve | Qué verás o registrarás |
+|---|---|---|
+| **Hoja de costos** | Comparar el costo estándar contra el real. | Por producto: materiales, mano de obra y CIF, con la diferencia en pesos y en %, y si fue favorable o desfavorable. |
+| **Análisis de variaciones** | Explicar **por qué** el costo real fue distinto del estándar. | Las seis variaciones por orden: precio y cantidad de materiales, tarifa y eficiencia de mano de obra, presupuesto y volumen de CIF. |
+
+#### 🧾 Reportes
+*Informes filtrables por período y producto, con exportación a Excel, PDF e impresión (ver [sección 9](#9--reportes-y-exportación)).*
+
+| Apartado | Para qué sirve | Qué verás o registrarás |
+|---|---|---|
+| **Reporte de materiales** | Revisar el consumo de materias primas. | Por orden y materia prima: cantidades, precios y variaciones. |
+| **Reporte de MOD** | Revisar la mano de obra. | Por orden y trabajador: horas, tarifas y variaciones. |
+| **Reporte de CIF** | Revisar los costos indirectos. | Presupuestado vs. real, tasa y CIF aplicado por período. |
+| **Reporte de producción** | Saber cuánto se produjo. | Estado de cada orden y unidades producidas. |
+| **Estado de costos de producción** | El resumen del costo de lo producido. | Un cierre ordenado de lo que costó producir en el período. |
+
+#### 🔐 Administración
+*Solo para el administrador (ver [sección 10](#10--usuarios-roles-y-registro-de-actividad) y [sección 11](#11--copias-de-seguridad-y-cómo-pasar-datos-entre-local-y-web)).*
+
+| Apartado | Para qué sirve | Qué verás o registrarás |
+|---|---|---|
+| **Usuarios** | Controlar quién entra y qué puede hacer. | Usuario, nombre completo, rol (*Administrador*, *Usuario* o *Estudiante*), estado y contraseña. |
+| **Registro de actividades** | La bitácora del sistema, de solo lectura. | Quién hizo qué y cuándo: sesiones, intentos fallidos, cambios en registros, exportaciones y copias. |
+| **Copias de seguridad** | Proteger tu información y moverla entre versiones. | Botones para **descargar** una copia `.json` y **restaurar** desde un archivo. |
 
 ---
 
@@ -331,7 +449,7 @@ Debajo hay tres gráficos: **costo unitario por producto** (estándar vs. real),
 ### 🧾 Hoja de costos
 **Costos y variaciones → Hoja de costos.** Por producto muestra, para materiales, mano de obra y CIF, el costo **estándar vs. real**, la diferencia en pesos y en %, y si fue favorable o desfavorable.
 
-<p align="center"><img src="docs/img/10-hoja-costos.png" alt="Hoja de costos" width="900"></p>
+<p align="center"><img src="docs/img/17-hoja-costos.png" alt="Hoja de costos" width="900"></p>
 
 ### 🔍 Análisis de variaciones
 Aquí está lo más valioso: el sistema descompone la diferencia en **seis variaciones**.
@@ -345,7 +463,7 @@ Aquí está lo más valioso: el sistema descompone la diferencia en **seis varia
 | **Presupuesto de CIF** | Los indirectos reales difieren de lo presupuestado | El presupuesto o un gasto atípico |
 | **Volumen de CIF** | Se produjo un volumen distinto al presupuestado | Capacidad sin usar |
 
-<p align="center"><img src="docs/img/11-variaciones.png" alt="Análisis de variaciones" width="900"></p>
+<p align="center"><img src="docs/img/18-variaciones.png" alt="Análisis de variaciones" width="900"></p>
 
 > [!NOTE]
 > **Convención de signos:** una variación **positiva** es **desfavorable** (costó más de lo estándar, en rojo). Una **negativa** es **favorable** (costó menos, en verde). El total es la suma de las seis y equivale a *costo real − costo estándar*.
@@ -374,15 +492,15 @@ Más detalle en [`docs/MANUAL_TECNICO.md`](docs/MANUAL_TECNICO.md).
 
 El menú **Reportes** (y el de *Costos y variaciones*) incluye **7 reportes**:
 
-| Reporte | Qué muestra |
-|---|---|
-| **Hoja de costos** | Estándar vs. real por producto y elemento del costo |
-| **Reporte de materiales** | Por orden y materia prima: cantidades, precios y variaciones |
-| **Reporte de MOD** | Por orden y trabajador: horas, tarifas y variaciones |
-| **Reporte de CIF** | Presupuestado vs. real, tasa y CIF aplicado por período |
-| **Reporte de producción** | Estado de cada orden y unidades producidas |
-| **Reporte de variaciones** | Las seis variaciones por orden |
-| **Estado de costos de producción** | Resumen del costo de lo producido |
+| Reporte | Dónde está en el menú | Qué muestra |
+|---|---|---|
+| **Hoja de costos** | Costos y variaciones | Estándar vs. real por producto y elemento del costo |
+| **Análisis de variaciones** | Costos y variaciones | Las seis variaciones por orden |
+| **Reporte de materiales** | Reportes | Por orden y materia prima: cantidades, precios y variaciones |
+| **Reporte de MOD** | Reportes | Por orden y trabajador: horas, tarifas y variaciones |
+| **Reporte de CIF** | Reportes | Presupuestado vs. real, tasa y CIF aplicado por período |
+| **Reporte de producción** | Reportes | Estado de cada orden y unidades producidas |
+| **Estado de costos de producción** | Reportes | Resumen del costo de lo producido |
 
 Cada reporte se puede **filtrar** por período y producto y **exportar** con tres botones:
 
@@ -390,7 +508,29 @@ Cada reporte se puede **filtrar** por período y producto y **exportar** con tre
 - **Exportar a PDF**
 - **Imprimir**
 
-<p align="center"><img src="docs/img/12-reportes.png" alt="Reportes con botones de exportación" width="900"></p>
+<p align="center"><img src="docs/img/19-rep-materiales.png" alt="Reporte de materiales con los botones de exportación" width="900"></p>
+<p align="center"><sub>Ejemplo: Reporte de materiales. Todos los reportes tienen los mismos botones de exportación.</sub></p>
+
+<details>
+<summary><b>🖼️ Ver los demás reportes</b></summary>
+
+**Reporte de MOD**
+
+<p align="center"><img src="docs/img/20-rep-mod.png" alt="Reporte de MOD" width="900"></p>
+
+**Reporte de CIF**
+
+<p align="center"><img src="docs/img/21-rep-cif.png" alt="Reporte de CIF" width="900"></p>
+
+**Reporte de producción**
+
+<p align="center"><img src="docs/img/22-rep-produccion.png" alt="Reporte de producción" width="900"></p>
+
+**Estado de costos de producción**
+
+<p align="center"><img src="docs/img/23-estado-costos.png" alt="Estado de costos de producción" width="900"></p>
+
+</details>
 
 ---
 
@@ -398,9 +538,11 @@ Cada reporte se puede **filtrar** por período y producto y **exportar** con tre
 
 **Administración → Usuarios** (solo administrador): crea cuentas con *usuario*, *nombre completo*, **rol** (*Administrador*, *Usuario* o *Estudiante – solo consulta*), estado *Activo* y contraseña de mínimo 6 caracteres.
 
-<p align="center"><img src="docs/img/13-usuarios.png" alt="Módulo Usuarios" width="800"></p>
+<p align="center"><img src="docs/img/24-usuarios.png" alt="Módulo Usuarios" width="800"></p>
 
 **Administración → Registro de actividades:** guarda **quién hizo qué y cuándo**: inicios y cierres de sesión, intentos fallidos, creación, edición y eliminación de registros, exportaciones y copias de seguridad. Es de solo lectura.
+
+<p align="center"><img src="docs/img/25-actividades.png" alt="Registro de actividades" width="800"></p>
 
 > [!NOTE]
 > Un registro que está siendo usado por otros datos (por ejemplo, una materia prima que ya está en una receta) **no se puede eliminar**: el sistema te avisa y te dice qué eliminar primero.
@@ -411,7 +553,7 @@ Cada reporte se puede **filtrar** por período y producto y **exportar** con tre
 
 **Administración → Copias de seguridad** (solo administrador).
 
-<p align="center"><img src="docs/img/14-copias.png" alt="Pantalla de Copias de seguridad" width="800"></p>
+<p align="center"><img src="docs/img/26-copias.png" alt="Pantalla de Copias de seguridad" width="800"></p>
 
 | Acción | Qué hace |
 |---|---|
